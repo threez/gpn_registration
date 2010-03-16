@@ -14,7 +14,11 @@ body {
   width: 300px;
   margin: 50px auto;
   padding-right: 305px;
-  background: no-repeat url(https://entropia.de/wiki/images/thumb/e/ec/Flyer_v3_front.png/300px-Flyer_v3_front.png) right
+  background: no-repeat url(https://entropia.de/wiki/images/thumb/e/ec/Flyer_v3_front.png/300px-Flyer_v3_front.png) right top;
+}
+
+#main {
+  min-height: 400px;
 }
 
 fieldset {

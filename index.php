@@ -8,8 +8,9 @@
 	$email = $_POST["email"];
 	$help = ($_POST["help"] == "yes") ? true : false;
 	$shirt = $_POST["shirt"];
+	$posted = isset($_POST['submit']);
 	
-	if (isset($_POST['submit'])) {
+	if ($posted) {
 		if ($ident == "") {
 			$error = "Wir wissen nicht wie wir dich nennen sollen?!";
 		} else if (!eregi("^[a-z0-9]+([-_\.]?[a-z0-9])+@[a-z0-9]+([-_\.]?[a-z0-9])+\.[a-z]{2,4}$", $email)) {
@@ -48,15 +49,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<title>GPN9 Anmeldung</title>
-		
 		<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" />
-
 		<meta name="robots" content="index,follow" />
 		<meta name="description" content="" />
 		<meta name="author" content="ccc karlsruhe" />
-		<meta name="keywords" content="ccc gpn<? echo $gpn_time ?>" />
+		<meta name="keywords" content="ccc gpn<? echo $gpn_version ?>" />
 		<meta http-equiv="Content-language" content="de" />
-		
 		<link rel="stylesheet" type="text/css" href="style.css" />
 	</head>
 	<body>
@@ -68,26 +66,21 @@
 				</p>
 			</div>
 			<div id="main">
+			<? if (isset($error) || !$posted) { ?>
 				<form action="" method="post">
 					<fieldset>
 						<legend>Kontaktdaten</legend>
-						
-						<? if (isset($error)) { ?>
-						<p class="error">
-							<? echo $error ?>
-						<p>
-						<? } ?>
-						
+					<? if (isset($error)) { ?>
+						<p class="error"><? echo $error ?><p>
+					<? } ?>
 						<p>
 							<label for="ident">Name/Nickname/Id:</label>
 							<input type="text" id="ident" name="ident" class="ident" value="<? echo $ident ?>"/>
 						</p>
-						
 						<p>
 							<label for="email">E-Mail:</label>
 							<input type="text" id="email" name="email" class="email" value="<? echo $email ?>">
 						</p>
-						
 						<p>
 							<input type="checkbox" id="help" name="help" value="yes" class="help" <? if ($help) echo "checked" ?>>
 							<label for="help">Mithelfen (als Troll/...)</label>
@@ -95,12 +88,10 @@
 					</fieldset>
 					<fieldset>
 						<legend>T-Shirt</legend>
-						
 						<p class="info">
 							Wollt ihr ein T-Shirt in eurer Gr&ouml;&szlig;e mit reservieren?
 							Einfach die Gr&ouml;&szlig;e, ausw&auml;hlen und bei der GPN abholen.
 						</p>
-						
 						<p>
 							<label for="shirt">Gr&ouml;&szlig;e:</label>
 							<select id="shirt" class="shirt" name="shirt">
@@ -124,6 +115,12 @@
 					</fieldset>
 					<input id="submit" name="submit" type="submit" value="Anmelden">
 				</form>
+			<? } else { ?>
+				<p>
+					Danke f&uuml;r deine Anmeldung. Als Best&auml;tigung haben wir dir
+					eine E-Mail gesendet.
+				</p>
+			<? } ?>
 			</div>
 			<div id="footer"></div>
 		</div>
