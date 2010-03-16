@@ -1,0 +1,64 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+  color: #CF461A;
+  background: black;
+  font-size: 1.2em;
+  font-family: Helvetica, sans-serif;
+}
+
+#container {
+  width: 300px;
+  margin: 50px auto;
+  padding-right: 305px;
+  background: no-repeat url(https://entropia.de/wiki/images/thumb/e/ec/Flyer_v3_front.png/300px-Flyer_v3_front.png) right
+}
+
+fieldset {
+  margin-top: 10px;
+  border: 1px dashed #69B1FB;
+  padding: 5px;
+}
+
+legend {
+  padding: 3px;
+}
+
+input, select {
+  border: 1px solid #69B1FB;
+  color: #69B1FB;
+  font-size: 0.8em;
+  background: black;
+  padding: 3px;
+}
+
+p {
+  margin: 5px 0px 5px 0px;
+}
+
+.error {
+  color: red;
+  
+}
+
+.small {
+  font-size: 0.6em;
+}
+
+.ident, .email {
+  width: 280px;
+}
+
+.info {
+  font-size: 0.8em;
+  color: #69B1FB;
+}
+
+#submit {
+  margin-top: 10px;
+  width: 300px;
+  font-size: 1.4em;
+}
