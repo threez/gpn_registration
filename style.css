@@ -21,6 +21,11 @@ body {
   min-height: 400px;
 }
 
+#present_desc {
+  width: 585px;
+  height: 100px;
+}
+
 fieldset {
   margin-top: 10px;
   border: 1px dashed #69B1FB;
@@ -31,11 +36,12 @@ legend {
   padding: 3px;
 }
 
-input, select {
+input, select, textarea {
   border: 1px solid #69B1FB;
   color: #69B1FB;
   font-size: 0.8em;
   background: black;
+  font-family: Helvetica, sans-serif;
   padding: 3px;
 }
 
