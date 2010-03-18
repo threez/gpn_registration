@@ -1,4 +1,6 @@
 <?php
+	include "_inc_rfc3696.php";
+
 	$gpn_version = 9;
 	$gpn_time = "3.-6. Juni 2010";
 	$gpn_mail = "gpn9@entropia.de";
@@ -16,7 +18,7 @@
 	if ($posted) {
 		if ($ident == "") {
 			$error = "Wir wissen nicht wie wir dich nennen sollen?!";
-		} else if (!eregi("^[a-z0-9]+([-_\.]?[a-z0-9])+@[a-z0-9]+([-_\.]?[a-z0-9])+\.[a-z]{2,4}$", $email)) {
+		} else if (!is_rfc3696_valid_email_address($email)) {
 			$error = "Was ist das den f&uuml;r eine E-Mail Adresse?";
 		} else {
 			// escape strings
@@ -63,7 +65,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<title>GPN<?php echo $gpn_version ?> Anmeldung</title>
-		<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" />
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="robots" content="index,follow" />
 		<meta name="description" content="" />
 		<meta name="author" content="ccc karlsruhe" />
