@@ -10,6 +10,16 @@ body {
   font-family: Helvetica, sans-serif;
 }
 
+optgroup {
+  color: #CF461A;
+  border-top: 1px dashed #CF461A;
+}
+
+option {
+  color: #69B1FB;
+  padding-left: 20px;
+}
+
 #container {
   width: 300px;
   margin: 50px auto;
