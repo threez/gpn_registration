@@ -1,9 +1,8 @@
-<?
+<?php
 	$gpn_version = 9;
 	$gpn_time = "3.-6. Juni 2010";
 	$gpn_mail = "gpn9@entropia.de";
 	$gpn_info_mail = "info@entropia.de";
-	$content_type = "Content-Type: text/html";
 	
 	$ident = $_POST["ident"];
 	$email = $_POST["email"];
@@ -23,30 +22,30 @@
 			$ident = htmlspecialchars($ident);
 			$email = htmlspecialchars($email);
 			$shirt = htmlspecialchars($shirt);
-			$present_desc = str_replace("\n", "</p><p>", htmlspecialchars($present_desc));
+			$present_desc = htmlspecialchars($present_desc);
 			
 			// mail to user
-			$header = "From: $gpn_mail <$gpn_mail>\n$content_type\n";
+			$header = "From: $gpn_mail <$gpn_mail>\n";
 			$title = "Anmeldung zur GPN$gpn_version";
-			$body = "<h1>Anmeldung f&uuml;r die GPN$gpn_version</h1>
-			 <p>Danke f&uuml;r die Anmeldung bei der GPN. Wir freuen uns auf dich!</p>
-			 <p>Bis zum $gpn_time.</p>";
+			$body = "Anmeldung f&uuml;r die GPN$gpn_version\n\n";
+			$body .= "Danke f&uuml;r die Anmeldung bei der GPN. Wir freuen uns auf dich!\n\n";
 		  if ($present)
-				$body .= "<p>Deinen Vortragthema bearbeiten wir und melden uns dann sp&auml;ter...</p>";
-			$body .= "<p>Dein GPN-Team</p>";
+				$body .= "Deinen Vortragsthema bearbeiten wir und melden uns dann sp&auml;ter...\n\n";
+			$body .= "Bis zum $gpn_time.\n\n";
+			$body .= "Dein GPN-Team";
 			mail($email, $title, $body, $header);
 	
 			// mail to gpn team
-			$header = "From: $email <$email>\n$content_type\n";
+			$header = "From: $email <$email>\n";
 			$title = "$ident meldet sich zur GPN$gpn_version";
-			$body = "<h1>$title</h1>";
+			$body = "$title\n\n";
 			if ($help)
-				$body .= "<p>Ich w&uuml;rde gerne mithelfen...</p>";
+				$body .= "Ich w&uuml;rde gerne mithelfen...\n\n";
 			if ($shirt != "")
-				$body .= "<p>Ich h&auml;tte gerne ein T-Shirt in $shirt.</p>";
+				$body .= "Ich h&auml;tte gerne ein T-Shirt in $shirt.\n\n";
 			if ($present)
-				$body .= "<h2>Mein Vortrag:</h2><p>$present_desc</p>";
-			$body .= "<p>Viele Gr&uuml;&szlig;e $ident</p>";
+				$body .= "Mein Vortrag:\n$present_desc\n\n";
+			$body .= "Viele Gr&uuml;&szlig;e $ident";
 			mail($gpn_mail, $title, $body, $header);
 			mail($gpn_info_mail, $title, $body, $header);
 		}
@@ -57,12 +56,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<title>GPN<? echo $gpn_version ?> Anmeldung</title>
+		<title>GPN<?php echo $gpn_version ?> Anmeldung</title>
 		<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" />
 		<meta name="robots" content="index,follow" />
 		<meta name="description" content="" />
 		<meta name="author" content="ccc karlsruhe" />
-		<meta name="keywords" content="ccc gpn<? echo $gpn_version ?>" />
+		<meta name="keywords" content="ccc gpn<?php echo $gpn_version ?>" />
 		<meta http-equiv="Content-language" content="de" />
 		<link rel="stylesheet" type="text/css" href="style.css" />
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
@@ -79,41 +78,41 @@
 				$('#present').click(function() {
 					toggle($(this), '#present_desc_p');
 				});
-				<? if (!$present) { ?>
+				<?php if (!$present) { ?>
 				toggle($('present'), $('#present_desc_p'));
-				<? } ?>
+				<?php } ?>
 			});
 		</script>
 	</head>
 	<body>
 		<div id="container">
 			<div id="header">
-				<h1>GPN<? echo $gpn_version ?> Anmeldung</h1>
+				<h1>GPN<?php echo $gpn_version ?> Anmeldung</h1>
 				<p class="small">
-					Am <? echo $gpn_time ?>
+					Am <?php echo $gpn_time ?>
 				</p>
 			</div>
 			<div id="main">
-			<? if (isset($error) || !$posted) { ?>
+			<?php if (isset($error) || !$posted) { ?>
 				<form action="" method="post">
 					<fieldset>
 						<legend>Kontaktdaten</legend>
-					<? if (isset($error)) { ?>
-						<p class="error"><? echo $error ?><p>
-					<? } ?>
+					<?php if (isset($error)) { ?>
+						<p class="error"><?php echo $error ?><p>
+					<?php } ?>
 						<p>
 							<label for="ident">Name/Nickname/Id:</label>
 							<input type="text" id="ident" name="ident" class="ident" 
-										 value="<? echo $ident ?>"/>
+										 value="<?php echo $ident ?>"/>
 						</p>
 						<p>
 							<label for="email">E-Mail:</label>
 							<input type="text" id="email" name="email" class="email" 
-										 value="<? echo $email ?>">
+										 value="<?php echo $email ?>">
 						</p>
 						<p>
 							<input type="checkbox" id="help" name="help" value="yes" 
-										 class="help" <? if ($help) echo "checked" ?>>
+										 class="help" <?php if ($help) echo "checked" ?>>
 							<label for="help">Mithelfen (als Troll/...)</label>
 						</p>
 					</fieldset>
@@ -121,24 +120,24 @@
 						<legend>T-Shirt</legend>
 						<p class="info">
 							Wollt ihr ein T-Shirt in eurer Gr&ouml;&szlig;e mit reservieren?
-							Einfach die Gr&ouml;&szlig;e, ausw&auml;hlen und bei der GPN abholen.
+							Einfach die Gr&ouml;&szlig;e ausw&auml;hlen und bei der GPN abholen.
 						</p>
 						<p>
 							<label for="shirt">Gr&ouml;&szlig;e:</label>
 							<select id="shirt" class="shirt" name="shirt">
-								<option value="" <? if ($shirt == "") echo "selected" ?>>
+								<option value="" <?php if ($shirt == "") echo "selected" ?>>
 									- kein T-Shirt -
 								</option>
-								<option value="S" <? if ($shirt == "S") echo "selected" ?>>
+								<option value="S" <?php if ($shirt == "S") echo "selected" ?>>
 									S
 								</option>
-								<option value="M" <? if ($shirt == "M") echo "selected" ?>>
+								<option value="M" <?php if ($shirt == "M") echo "selected" ?>>
 									M
 								</option>
-								<option value="XL" <? if ($shirt == "XL") echo "selected" ?>>
+								<option value="XL" <?php if ($shirt == "XL") echo "selected" ?>>
 									XL
 								</option>
-								<option value="XXL" <? if ($shirt == "XXL") echo "selected" ?>>
+								<option value="XXL" <?php if ($shirt == "XXL") echo "selected" ?>>
 									XXL
 								</option>
 							</select>
@@ -147,23 +146,23 @@
 					<fieldset>
 						<legend>
 							<input type="checkbox" id="present" name="present" 
-										 value="yes" <? if ($present) echo "checked" ?>>
-							Ich m&ouml;chte Vortragen
+										 value="yes" <?php if ($present) echo "checked" ?>>
+							Ich m&ouml;chte vortragen
 						</legend>
 						<p id="present_desc_p">
 							<label for="present_desc">Was willst du machen? Wann? Wie lange?</label>
 							<textarea id="present_desc" name="present_desc" cols="40" 
-												rows="10"><? echo $present_desc ?></textarea>
+												rows="10"><?php echo $present_desc ?></textarea>
 						</p>
 					</fieldset>
 					<input id="submit" name="submit" type="submit" value="Anmelden">
 				</form>
-			<? } else { ?>
+			<?php } else { ?>
 				<p>
 					Danke f&uuml;r deine Anmeldung. Als Best&auml;tigung haben wir dir
 					eine E-Mail gesendet.
 				</p>
-			<? } ?>
+			<?php } ?>
 			</div>
 			<div id="footer"></div>
 		</div>

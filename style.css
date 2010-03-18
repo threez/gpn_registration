@@ -21,6 +21,10 @@ body {
   min-height: 400px;
 }
 
+#present_desc_p {
+  display: none;
+}
+
 #present_desc {
   width: 585px;
   height: 100px;
