@@ -114,11 +114,11 @@
 						<p>
 							<label for="email">E-Mail:</label>
 							<input type="text" id="email" name="email" class="email" 
-										 value="<?php echo $email ?>">
+										 value="<?php echo $email ?>"/>
 						</p>
 						<p>
 							<input type="checkbox" id="help" name="help" value="yes" 
-										 class="help" <?php if ($help) echo "checked" ?>>
+										 class="help" <?php if ($help) echo "checked" ?>/>
 							<label for="help">Mithelfen (als Troll/...)</label>
 						</p>
 					</fieldset>
@@ -131,43 +131,43 @@
 						<p>
 							<label for="shirt">Gr&ouml;&szlig;e:</label>
 							<select id="shirt" class="shirt" name="shirt">
-								<option value="" <?php if ($shirt == "") echo "selected" ?>>
+								<option value="" <?php if ($shirt == "") echo "selected=\"selected\"" ?>>
 									- kein T-Shirt -
 								</option>
 								<optgroup label="for Boys">
-									<option value="Boys-S" <?php if ($shirt == "Boys-S") echo "selected" ?>>
+									<option value="Boys-S" <?php if ($shirt == "Boys-S") echo "selected=\"selected\"" ?>>
 										S
 									</option>
-									<option value="Boys-M" <?php if ($shirt == "Boys-M") echo "selected" ?>>
+									<option value="Boys-M" <?php if ($shirt == "Boys-M") echo "selected=\"selected\"" ?>>
 										M
 									</option>
-									<option value="Boys-L" <?php if ($shirt == "Boys-L") echo "selected" ?>>
+									<option value="Boys-L" <?php if ($shirt == "Boys-L") echo "selected=\"selected\"" ?>>
 										L
 									</option>
-									<option value="Boys-XL" <?php if ($shirt == "Boys-XL") echo "selected" ?>>
+									<option value="Boys-XL" <?php if ($shirt == "Boys-XL") echo "selected=\"selected\"" ?>>
 										XL
 									</option>
-									<option value="Boys-XXL" <?php if ($shirt == "Boys-XXL") echo "selected" ?>>
+									<option value="Boys-XXL" <?php if ($shirt == "Boys-XXL") echo "selected=\"selected\"" ?>>
 										XXL
 									</option>
 								</optgroup>
 								<optgroup label="for Girls">
-									<option value="Girls-XS" <?php if ($shirt == "Girls-XS") echo "selected" ?>>
+									<option value="Girls-XS" <?php if ($shirt == "Girls-XS") echo "selected=\"selected\"" ?>>
 										XS
 									</option>
-									<option value="Girls-S" <?php if ($shirt == "Girls-S") echo "selected" ?>>
+									<option value="Girls-S" <?php if ($shirt == "Girls-S") echo "selected=\"selected\"" ?>>
 										S
 									</option>
-									<option value="Girls-M" <?php if ($shirt == "Girls-M") echo "selected" ?>>
+									<option value="Girls-M" <?php if ($shirt == "Girls-M") echo "selected=\"selected\"" ?>>
 										M
 									</option>
-									<option value="Girls-L" <?php if ($shirt == "Girls-L") echo "selected" ?>>
+									<option value="Girls-L" <?php if ($shirt == "Girls-L") echo "selected=\"selected\"" ?>>
 										L
 									</option>
-									<option value="Girls-XL" <?php if ($shirt == "Girls-XL") echo "selected" ?>>
+									<option value="Girls-XL" <?php if ($shirt == "Girls-XL") echo "selected=\"selected\"" ?>>
 										XL
 									</option>
-									<option value="Girls-XXL" <?php if ($shirt == "Girls-XXL") echo "selected" ?>>
+									<option value="Girls-XXL" <?php if ($shirt == "Girls-XXL") echo "selected=\"selected\"" ?>>
 										XXL
 									</option>
 								</optgroup>
@@ -177,7 +177,7 @@
 					<fieldset>
 						<legend>
 							<input type="checkbox" id="present" name="present" 
-										 value="yes" <?php if ($present) echo "checked" ?>>
+										 value="yes" <?php if ($present) echo "checked" ?>/>
 							Ich m&ouml;chte vortragen
 						</legend>
 						<p id="present_desc_p">
@@ -186,7 +186,9 @@
 												rows="10"><?php echo $present_desc ?></textarea>
 						</p>
 					</fieldset>
-					<input id="submit" name="submit" type="submit" value="Anmelden">
+          <p>
+  					<input id="submit" name="submit" type="submit" value="Anmelden"/>
+          </p>
 				</form>
 			<?php } else { ?>
 				<p>
@@ -199,3 +201,4 @@
 		</div>
 	</body>
 </html>
+
