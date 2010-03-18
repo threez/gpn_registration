@@ -3,6 +3,7 @@
 	$gpn_time = "3.-6. Juni 2010";
 	$gpn_mail = "gpn9@entropia.de";
 	$gpn_info_mail = "info@entropia.de";
+	$gpn_announce_mail = "gpn-announce-request@entropia.de";
 	
 	$ident = $_POST["ident"];
 	$email = $_POST["email"];
@@ -34,6 +35,11 @@
 			$body .= "Bis zum $gpn_time.\n\n";
 			$body .= "Dein GPN-Team";
 			mail($email, $title, $body, $header);
+			
+			// register to mailman gpn announce list
+			$header = "From: $email <$email>\n";
+			$body = "subscribe address=$email\n";
+			mail($gpn_announce_mail, $title, $body, $header);
 	
 			// mail to gpn team
 			$header = "From: $email <$email>\n";
