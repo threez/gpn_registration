@@ -78,8 +78,8 @@
 				$('#present').click(function() {
 					toggle($(this), '#present_desc_p');
 				});
-				<?php if (!$present) { ?>
-				toggle($('present'), $('#present_desc_p'));
+				<?php if ($present) { ?>
+				$('#present_desc_p').show();
 				<?php } ?>
 			});
 		</script>
