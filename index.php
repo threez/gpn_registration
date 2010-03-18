@@ -27,10 +27,10 @@
 			// mail to user
 			$header = "From: $gpn_mail <$gpn_mail>\n";
 			$title = "Anmeldung zur GPN$gpn_version";
-			$body = "Anmeldung f&uuml;r die GPN$gpn_version\n\n";
-			$body .= "Danke f&uuml;r die Anmeldung bei der GPN. Wir freuen uns auf dich!\n\n";
+			$body = "Anmeldung fuer die GPN$gpn_version\n\n";
+			$body .= "Danke fuer die Anmeldung bei der GPN. Wir freuen uns auf dich!\n\n";
 		  if ($present)
-				$body .= "Deinen Vortragsthema bearbeiten wir und melden uns dann sp&auml;ter...\n\n";
+				$body .= "Deinen Vortragsthema bearbeiten wir und melden uns dann spaeter...\n\n";
 			$body .= "Bis zum $gpn_time.\n\n";
 			$body .= "Dein GPN-Team";
 			mail($email, $title, $body, $header);
@@ -40,12 +40,12 @@
 			$title = "$ident meldet sich zur GPN$gpn_version";
 			$body = "$title\n\n";
 			if ($help)
-				$body .= "Ich w&uuml;rde gerne mithelfen...\n\n";
+				$body .= "Ich wuerde gerne mithelfen...\n\n";
 			if ($shirt != "")
-				$body .= "Ich h&auml;tte gerne ein T-Shirt in $shirt.\n\n";
+				$body .= "Ich haette gerne ein T-Shirt in $shirt.\n\n";
 			if ($present)
 				$body .= "Mein Vortrag:\n$present_desc\n\n";
-			$body .= "Viele Gr&uuml;&szlig;e $ident";
+			$body .= "Viele Gruesse $ident";
 			mail($gpn_mail, $title, $body, $header);
 			mail($gpn_info_mail, $title, $body, $header);
 		}
