@@ -128,18 +128,43 @@
 								<option value="" <?php if ($shirt == "") echo "selected" ?>>
 									- kein T-Shirt -
 								</option>
-								<option value="S" <?php if ($shirt == "S") echo "selected" ?>>
-									S
-								</option>
-								<option value="M" <?php if ($shirt == "M") echo "selected" ?>>
-									M
-								</option>
-								<option value="XL" <?php if ($shirt == "XL") echo "selected" ?>>
-									XL
-								</option>
-								<option value="XXL" <?php if ($shirt == "XXL") echo "selected" ?>>
-									XXL
-								</option>
+								<optgroup label="for Boys">
+									<option value="B-S" <?php if ($shirt == "B-S") echo "selected" ?>>
+										S
+									</option>
+									<option value="B-M" <?php if ($shirt == "B-M") echo "selected" ?>>
+										M
+									</option>
+									<option value="B-L" <?php if ($shirt == "B-L") echo "selected" ?>>
+										L
+									</option>
+									<option value="B-XL" <?php if ($shirt == "B-XL") echo "selected" ?>>
+										XL
+									</option>
+									<option value="B-XXL" <?php if ($shirt == "B-XXL") echo "selected" ?>>
+										XXL
+									</option>
+								</optgroup>
+								<optgroup label="for Girls">
+									<option value="G-XS" <?php if ($shirt == "G-XS") echo "selected" ?>>
+										XS
+									</option>
+									<option value="G-S" <?php if ($shirt == "G-S") echo "selected" ?>>
+										S
+									</option>
+									<option value="G-M" <?php if ($shirt == "G-M") echo "selected" ?>>
+										M
+									</option>
+									<option value="G-L" <?php if ($shirt == "G-L") echo "selected" ?>>
+										L
+									</option>
+									<option value="G-XL" <?php if ($shirt == "G-XL") echo "selected" ?>>
+										XL
+									</option>
+									<option value="G-XXL" <?php if ($shirt == "G-XXL") echo "selected" ?>>
+										XXL
+									</option>
+								</optgroup>
 							</select>
 						</p>
 					</fieldset>
