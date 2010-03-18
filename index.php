@@ -129,39 +129,39 @@
 									- kein T-Shirt -
 								</option>
 								<optgroup label="for Boys">
-									<option value="B-S" <?php if ($shirt == "B-S") echo "selected" ?>>
+									<option value="Boys-S" <?php if ($shirt == "Boys-S") echo "selected" ?>>
 										S
 									</option>
-									<option value="B-M" <?php if ($shirt == "B-M") echo "selected" ?>>
+									<option value="Boys-M" <?php if ($shirt == "Boys-M") echo "selected" ?>>
 										M
 									</option>
-									<option value="B-L" <?php if ($shirt == "B-L") echo "selected" ?>>
+									<option value="Boys-L" <?php if ($shirt == "Boys-L") echo "selected" ?>>
 										L
 									</option>
-									<option value="B-XL" <?php if ($shirt == "B-XL") echo "selected" ?>>
+									<option value="Boys-XL" <?php if ($shirt == "Boys-XL") echo "selected" ?>>
 										XL
 									</option>
-									<option value="B-XXL" <?php if ($shirt == "B-XXL") echo "selected" ?>>
+									<option value="Boys-XXL" <?php if ($shirt == "Boys-XXL") echo "selected" ?>>
 										XXL
 									</option>
 								</optgroup>
 								<optgroup label="for Girls">
-									<option value="G-XS" <?php if ($shirt == "G-XS") echo "selected" ?>>
+									<option value="Girls-XS" <?php if ($shirt == "Girls-XS") echo "selected" ?>>
 										XS
 									</option>
-									<option value="G-S" <?php if ($shirt == "G-S") echo "selected" ?>>
+									<option value="Girls-S" <?php if ($shirt == "Girls-S") echo "selected" ?>>
 										S
 									</option>
-									<option value="G-M" <?php if ($shirt == "G-M") echo "selected" ?>>
+									<option value="Girls-M" <?php if ($shirt == "Girls-M") echo "selected" ?>>
 										M
 									</option>
-									<option value="G-L" <?php if ($shirt == "G-L") echo "selected" ?>>
+									<option value="Girls-L" <?php if ($shirt == "Girls-L") echo "selected" ?>>
 										L
 									</option>
-									<option value="G-XL" <?php if ($shirt == "G-XL") echo "selected" ?>>
+									<option value="Girls-XL" <?php if ($shirt == "Girls-XL") echo "selected" ?>>
 										XL
 									</option>
-									<option value="G-XXL" <?php if ($shirt == "G-XXL") echo "selected" ?>>
+									<option value="Girls-XXL" <?php if ($shirt == "Girls-XXL") echo "selected" ?>>
 										XXL
 									</option>
 								</optgroup>
