@@ -7,15 +7,17 @@
 	$gpn_info_mail = "info@entropia.de";
 	$gpn_announce_mail = "gpn-announce-request@entropia.de";
 	
-	$ident = $_POST["ident"];
-	$email = $_POST["email"];
-	$help = ($_POST["help"] == "yes") ? true : false;
-	$shirt = $_POST["shirt"];
-	$posted = isset($_POST['submit']);
-	$present = ($_POST["present"] == "yes") ? true : false;
-	$present_desc = $_POST["present_desc"];
+	// check if the formular was submitted
+	$posted = sizeof($_POST) > 0;
 	
 	if ($posted) {
+		$ident = $_POST["ident"];
+		$email = $_POST["email"];
+		$help = ($_POST["help"] == "yes") ? true : false;
+		$shirt = $_POST["shirt"];
+		$present = ($_POST["present"] == "yes") ? true : false;
+		$present_desc = $_POST["present_desc"];
+		
 		if ($ident == "") {
 			$error = "Wir wissen nicht wie wir dich nennen sollen?!";
 		} else if (!is_rfc3696_valid_email_address($email)) {
@@ -57,6 +59,10 @@
 			mail($gpn_mail, $title, $body, $header);
 			mail($gpn_info_mail, $title, $body, $header);
 		}
+	} else {
+		// initiaize variables with defaults
+		$present = $help = false;
+		$ident = $email = $shirt = $present_desc = "";
 	}
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
