@@ -28,7 +28,7 @@
 			$present_desc = htmlspecialchars($present_desc);
 			
 			// mail to user
-			$header = "From: $gpn_mail <$gpn_mail>\n";
+			$header = "From: $gpn_mail\n";
 			$title = "Anmeldung zur GPN$gpn_version";
 			$body = "Anmeldung fuer die GPN$gpn_version\n\n";
 			$body .= "Danke fuer die Anmeldung bei der GPN. Wir freuen uns auf dich!\n\n";
