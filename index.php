@@ -13,9 +13,9 @@
 	if ($posted) {
 		$ident = $_POST["ident"];
 		$email = $_POST["email"];
-		$help = ($_POST["help"] == "yes") ? true : false;
+		$help = (array_key_exists("help", $_POST) && $_POST["help"] == "yes");
 		$shirt = $_POST["shirt"];
-		$present = ($_POST["present"] == "yes") ? true : false;
+		$present = (array_key_exists("present", $_POST) && $_POST["present"] == "yes");
 		$present_desc = $_POST["present_desc"];
 		
 		if ($ident == "") {
